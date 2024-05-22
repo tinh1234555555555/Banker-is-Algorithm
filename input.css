@@ -1,0 +1,191 @@
+.form_input {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  display: none;
+  z-index: 2;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+:root {
+  --primary-color: #c6c3c3;
+  --second-color: #ffffff;
+  --black-color: #000000;
+}
+
+.input_boxs {
+  position: relative;
+  width: 450px;
+  backdrop-filter: blur(25px);
+  border: 1px solid var(--primary-color);
+  border-radius: 15px;
+  padding: 6.5em 2.5em 2em 2.5em;
+  color: var(--second-color);
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+}
+
+.input-header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: gold;
+  width: 140px;
+  height: 70px;
+  border-radius: 0 0 20px 20px;
+}
+
+.input-header span {
+  font-size: 30px;
+  color: var(--black-color);
+}
+
+.input-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30px;
+
+  width: 30px;
+  height: 30px;
+  border-top-right-radius: 50%;
+  background: transparent;
+}
+
+.input-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -30px;
+
+  width: 30px;
+  height: 30px;
+  border-top-left-radius: 50%;
+  background: transparent;
+}
+
+.f_color {
+  color: black;
+}
+
+.input_box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.input-field {
+  width: 100%;
+  height: 55px;
+  font-size: 16px;
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 30px;
+  outline: none;
+}
+
+#processes_input {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#resources_input {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.lable {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  transition: 0.2s;
+}
+
+.input-field:focus ~ .lable,
+.input-field:valid ~ .lable {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 14px;
+  background-color: var(--primary-color);
+  border-radius: 30px;
+  color: var(--black-color);
+  padding: 0 10px;
+  text-align: center;
+}
+
+.icon {
+  position: absolute;
+  top: 27px;
+  right: 25px;
+  font-size: 20px;
+}
+
+.input-submit {
+  width: 100%;
+  height: 50px;
+  background: #ececec;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input_complete {
+  padding-top: 2.5rem;
+  padding-bottom: 0;
+}
+
+.input-submit:hover {
+  background: orange;
+}
+
+#Instruction {
+  color: black;
+}
+
+#Instruction_header {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .input_boxs {
+    width: 200px;
+  }
+
+  .input-field {
+    width: 100%;
+    height: 25px;
+  }
+
+  .icon {
+    position: absolute;
+    top: 17px;
+    right: 15px;
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banker's Algorithm</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="hcmue.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="banker.css" />
+    <link rel="stylesheet" href="input.css" />
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        <a href="#">Banker's Algorithm</a>
+      </div>
+      <div class="options">
+        <div>
+          <button class="outline-btn" onclick="goHome()">Home</button>
+          <button class="outline-btn" onclick="openInstruction()">
+            Instruction
+          </button>
+        </div>
+        <div>
+          <button id="request_btn" onclick="request_appear();" hidden>
+            Request
+          </button>
+          <button id="edit_btn" onclick="editfunc();" hidden>Edit</button>
+
+          <button id="enforce_btn" onclick="enforce_request();" hidden>
+            Enforce
+          </button>
+          <button id="openFormButton">Input</button>
+
+          <button id="gen_btn" onclick="errorGenerator();" hidden>
+            Generate Input Fields
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="drawing-area" id="drawing-area">
+      <div id="container_table">
+        <div id="alloctionM" class="block_table"></div>
+        <div id="maximumM" class="block_table"></div>
+        <div id="availableA" class="block_table"></div>
+        <div id="NeedM" class="block_table"></div>
+        <div id="RequestM" class="block_table"></div>
+      </div>
+      <div id="NeedMatrixBtn"></div>
+      <div id="ProcessVisualBtn" style="text-align: justify"></div>
+      <h3 id="details"></h3>
+      <div id="flagList" style="visibility: hidden"></div>
+      <div id="ansList" style="visibility: hidden"></div>
+    </div>
+
+    <div id="tooltip" class="tooltip"></div>
+    <div class="overlay" id="overlay"></div>
+    <div class="form_input" id="formInput">
+      <div class="input_boxs">
+        <div class="input-header">
+          <span>Input</span>
+        </div>
+        <div class="input_box f_color">
+          <input
+            type="number"
+            id="processes_input"
+            class="input-field"
+            required
+          />
+          <label for="processes_input" class="label">Processes</label>
+          <i class="bx bx-shape-square icon"></i>
+        </div>
+        <div class="input_box f_color">
+          <input
+            type="number"
+            id="resources_input"
+            class="input-field"
+            required
+          />
+          <label for="resources_input" class="label">Resources</label>
+          <i class="bx bx-droplet icon"></i>
+        </div>
+        <div class="input_complete">
+          <input
+            type="submit"
+            class="input-submit"
+            value="Complete"
+            id="completeButton"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="form_input" id="formInstruction">
+      <div class="input_boxs">
+        <div class="input-header" id="Instruction_header">
+          <span>Instruction</span>
+        </div>
+        <ol id="Instruction">
+          <li>
+            Select "Input" to enter the number of processes and resources.
+          </li>
+          <li>
+            Select "Generate Input Fields" to initialize the "Allocation", "Max"
+            and "Available" tables.
+          </li>
+          <li>Then, enter the desired metrics.</li>
+          <li>Select "Generate Need Matrix" to calculate the "Need" matrix.</li>
+          <li>
+            Continuously click "Start Process" to observe how the algorithm
+            operates.
+          </li>
+          <li>Select "Output" to display the results.</li>
+          <li>Select "Reset" to delete everything.</li>
+          <li>
+            Select "Edit" to edit the data to suit your new purpose. Then repeat
+            as instructed.
+          </li>
+          <li>Select "Request" to display the "Request" matrix.</li>
+          <ul>
+            <li>
+              Select "Enforce" to check the data. Then repeat as instructed.
+            </li>
+          </ul>
+        </ol>
+        <div class="input_complete">
+          <input
+            type="submit"
+            class="input-submit"
+            value="Continue"
+            onclick="closeInstruction()"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="showBlock"></div>
+    <div id="resultBlock">
+      <p id="safe_seq"></p>
+      <button id="closeBtn">Reset</button>
+    </div>
+  </body>
+
+  <script src="banker.js"></script>
+  <script src="animatedPageTransition.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+</html>
