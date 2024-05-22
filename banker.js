@@ -598,6 +598,8 @@ function enforce_request() {
         Number(document.getElementById("Req" + i + j).value);
       if (Number(document.getElementById("Need" + i + j).value) < 0) {
         alert("Stateless: Need >= Request");
+        document.getElementById("Req" + i + j).value = "";
+        document.getElementById("Req" + i + j).focus();     
         document.getElementById("enforce_btn").hidden = false;
         document.getElementById("ProcessVisualBtnb").remove();
         tooltip.classList.remove("show");
@@ -622,6 +624,8 @@ function enforce_request() {
             Number(document.getElementById("Avai0" + k).value) - sums[k];
           if (Number(document.getElementById("Avai0" + k).value) < 0) {
             alert("Stateless: Available >= Request");
+            document.getElementById("Req" + i + j).value = "";
+            document.getElementById("Req" + i + j).focus();                 
             document.getElementById("enforce_btn").hidden = false;
             document.getElementById("ProcessVisualBtnb").remove();
             tooltip.classList.remove("show");
